@@ -3,42 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name — Personal Page</title>
+    <title>Sowmya Korasikha — wild hearts, soft eyes.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Your Name Here</h1>
-        <p>Graduate student in software engineering. Coffee enthusiast. Dog person (or cat person — update this bio).</p>
-        <nav>
-            <a href="https://github.com/yourusername">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="gallery">
-            <div class="photo">
-                <img src="images/cat-sleeping.jpg" alt="A sleeping cat placeholder">
-                <p>Replace this with your own photo and caption</p>
-            </div>
-            <div class="photo">
-                <img src="images/dog-happy.jpg" alt="A happy dog placeholder">
-                <p>These are placeholder images — swap them out!</p>
-            </div>
-            <div class="photo">
-                <img src="images/cat-curious.jpg" alt="A curious cat placeholder">
-                <p>Use your own travel, pet, food, or project photos</p>
-            </div>
-            <div class="photo">
-                <img src="images/dog-sitting.jpg" alt="A sitting dog placeholder">
-                <p>Add as many photos as you like</p>
-            </div>
-        </section>
-    </main>
+    <div class="page">
 
-    <footer>
-        <p>Deployed to AWS S3 — Cloud Web App Engineering, 2026</p>
-    </footer>
+        <header class="hero">
+            <p class="eyebrow">personal site · 2026</p>
+            <h1>Sowmya Korasikha</h1>
+            <p class="bio">
+                Graduate student in software engineering.
+                A crazy animal lover.
+                <em>Easily distracted by dogs.</em>
+            </p>
+            <nav>
+                <a href="https://github.com/sowmyakb" target="_blank" rel="noopener">GitHub</a>
+                <span class="dot">&bull;</span>
+                <a href="https://www.linkedin.com/in/sowmya-korasikha/" target="_blank" rel="noopener">LinkedIn</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h2>A few animal pictures.</h2>
+                <p>
+                    Nothing fancy &mdash; just some I liked.
+                </p>
+            </section>
+
+            <section class="gallery">
+
+                <figure class="photo tall">
+                    <img src="images/wolf-gaze.jpg" alt="Two adult white arctic wolves and a small grey wolf pup on rocks">
+                    <figcaption>
+                        <span class="caption-title">The whole pack, quietly</span>
+                        <span class="caption-sub">two arctic wolves and a pup who doesn&rsquo;t know he&rsquo;s mighty yet</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="photo">
+                    <img src="images/elephant-calf.jpg" alt="African mother elephant walking with her calf on a dirt road">
+                    <figcaption>
+                        <span class="caption-title">Family, in grey</span>
+                        <span class="caption-sub">a mother and her six-week-old, on a road that belongs to them</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="photo">
+                    <img src="images/rescue-dog.jpg" alt="A tiny Indian street puppy with soulful eyes standing on fallen leaves">
+                    <figcaption>
+                        <span class="caption-title">Hope has four paws</span>
+                        <span class="caption-sub">a street puppy, braver than all of us</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="photo tall">
+                    <img src="images/fox-snow.jpg" alt="A painting of two red foxes in snow by Wilhelm Kuhnert">
+                    <figcaption>
+                        <span class="caption-title">Small fire in the snow</span>
+                        <span class="caption-sub">foxes painted in the 1800s &mdash; still alive to me</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="photo">
+                    <img src="images/horse-freedom.jpg" alt="A white horse running through grass at golden hour">
+                    <figcaption>
+                        <span class="caption-title">Unfenced</span>
+                        <span class="caption-sub">a white horse in golden light</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="photo">
+                    <img src="images/puppy-hope.jpg" alt="A golden puppy sleeping in someone's arms with a pink flower on its ear">
+                    <figcaption>
+                        <span class="caption-title">Exhibit A: easily distracted</span>
+                        <span class="caption-sub">a puppy, a pink flower, a full heart</span>
+                    </figcaption>
+                </figure>
+
+            </section>
+
+            <section class="about">
+                <h2>About me, briefly.</h2>
+                <p>
+                    I&rsquo;m Sowmya &mdash; I build software, I chase ideas, and I will absolutely
+                    cross a street to say hi to a dog. Right now I&rsquo;m studying practical
+                    full stack development (TCSS 506), learning how to take things from
+                    my laptop to the cloud &mdash; this page being Exhibit B.
+                </p>
+                <p class="signoff">
+                    Thanks for scrolling. &mdash; S.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Sowmya Korasikha &middot; Hand-built, deployed to AWS&nbsp;S3.</p>
+            <p class="tiny">Photos via <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> contributors. All heart, borrowed.</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
