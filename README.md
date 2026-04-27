@@ -1,52 +1,48 @@
-# Assignment 1: Personal Landing Page
+# Sowmya's Personal Landing Page
 
-A starter template for your personal landing page deployed to AWS S3.
+My personal portfolio site for TCSS 506 — Practical Full Stack Development.
+A small landing page with a bio, a gallery of animal photographs, and (as of v0.1.0) a click-to-zoom lightbox.
 
-## Getting Started
-
-1. Click **"Use this template"** on GitHub to create your own copy
-2. Clone your new repo locally
-3. Open in Cursor or VS Code
-4. Deploy to S3 as-is to verify your setup works
-5. Customize with your own content
-6. Re-deploy to S3
-
-## What's Included
+## What's here
 
 ```
-├── index.html        ← Your landing page
-├── style.css         ← Responsive grid styles
-├── .gitignore        ← Keeps junk files out of your repo
-├── README.md         ← This file
-└── images/
-    ├── cat-sleeping.jpg  ← Placeholder — replace with your photo
-    ├── dog-happy.jpg     ← Placeholder — replace with your photo
-    ├── cat-curious.jpg   ← Placeholder — replace with your photo
-    └── dog-sitting.jpg   ← Placeholder — replace with your photo
+├── index.html          ← Landing page
+├── style.css           ← Page styling
+├── css/
+│   └── lightbox.css    ← Lightbox overlay styles (Week 3)
+├── js/
+│   └── lightbox.js     ← Lightbox behaviour (Week 3)
+├── images/             ← My photos (+ a few starter samples)
+├── package.json        ← Local dev-server script (`npm run serve`)
+└── .gitignore
 ```
 
-## Customizing
+## Run locally
 
-Replace the placeholder images with your own photos, update the bio and links in `index.html`, and modify `style.css` to match your taste. Use AI to help — good prompts to try:
+```bash
+npm install
+npm run serve
+```
 
-- "Make this a dark theme"
-- "Add a hover zoom effect on the photos"
-- "Change the grid to a masonry layout"
-- "Add a skills section below the gallery"
+Then open http://localhost:8080. Click any thumbnail — the lightbox opens. Click the backdrop or press Escape to close.
 
-## Uploading to S3
+## Releases
 
-Upload `index.html`, `style.css`, and the `images/` folder to your S3 bucket. **Do NOT upload `.git`, `.gitignore`, or `README.md`** — those are for your repo, not your website.
+- **v0.1.0** — Lightbox gallery integrated into the landing page (Week 3).
 
-## Image Tips
+## Deployment
+
+Hosted as a static site on AWS S3. Upload `index.html`, `style.css`, the `css/`, `js/`, and `images/` folders to the bucket. Do **not** upload `.git`, `node_modules/`, `package*.json`, or `README.md` — those belong in the repo, not in production.
+
+## Image tips
 
 Resize photos to under 500 KB before uploading:
 
 - **Mac:** `sips --resampleWidth 1000 photo.jpg`
 - **Linux/WSL:** `convert photo.jpg -resize 1000x photo_resized.jpg`
 
-Keep filenames simple, lowercase, no spaces.
+Keep filenames lowercase with no spaces.
 
-## Submission
+---
 
-Do not submit this template unmodified. Your site must have your own photos and bio.
+*TCSS 506 · Practical Full Stack Development*

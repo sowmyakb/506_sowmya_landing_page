@@ -19,3 +19,7 @@ desktop.ini
 # Environment files
 .env
 .env.local
+
+# Node / npm
+node_modules/
+*.log
