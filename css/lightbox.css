@@ -1,66 +1,145 @@
-/* CS 506 · Week 3 Starter · Lightbox styling
- * Backdrop, centered image, fade-in transition.
- * Students may restyle or replace to match their own page.
+/* CS 506 · Week 3 · Lightbox styling — restyled to match the
+ * "Golden Hour" theme of the host page. The starter's gallery rules
+ * (.gallery, .gallery__thumb) were removed so the existing masonry
+ * layout in style.css stays the source of truth.
  */
 
-/* ── Gallery thumbnails ────────────────────────────────────────────── */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.gallery__thumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.gallery__thumb:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* ── Cursor hint on clickable thumbnails ───────────────────────────── */
+.photo {
+    cursor: pointer;
 }
 
 /* ── Lightbox overlay ──────────────────────────────────────────────── */
 .lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 14, 10, 0.93);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
 
 .lightbox.open {
-  display: flex;
-  opacity: 1;
+    display: flex;
+    opacity: 1;
 }
 
 .lightbox__img {
-  max-width: 90vw;
-  max-height: 80vh;
-  object-fit: contain;
-  border-radius: 4px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    max-width: 90vw;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
 }
 
 .lightbox__caption {
-  color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.95rem;
-  margin-top: 1rem;
-  text-align: center;
-  max-width: 80vw;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: #f5efe6;
+    margin-top: 1.4rem;
+    text-align: center;
+    max-width: 80vw;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+}
+
+.lightbox__counter {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #c0542a;
+    margin-top: 0.6rem;
+    font-weight: 600;
+}
+
+/* ── Controls (close, prev, next) ──────────────────────────────────── */
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+    position: absolute;
+    background: transparent;
+    border: 0;
+    color: rgba(245, 239, 230, 0.7);
+    cursor: pointer;
+    padding: 12px;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 300;
+    line-height: 1;
+    user-select: none;
+    transition: color 0.2s ease, transform 0.25s ease;
+}
+
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover {
+    color: #c0542a;
+}
+
+.lightbox__close:focus-visible,
+.lightbox__prev:focus-visible,
+.lightbox__next:focus-visible {
+    outline: 1.5px solid #c0542a;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.lightbox__close {
+    top: 24px;
+    right: 24px;
+    font-size: 36px;
+}
+
+.lightbox__close:hover {
+    transform: rotate(90deg);
+}
+
+.lightbox__prev,
+.lightbox__next {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+}
+
+.lightbox__prev { left: 20px; }
+.lightbox__next { right: 20px; }
+
+.lightbox__prev:hover { transform: translateY(-50%) translateX(-3px); }
+.lightbox__next:hover { transform: translateY(-50%) translateX(3px); }
+
+/* ── Mobile tightening ─────────────────────────────────────────────── */
+@media (max-width: 520px) {
+    .lightbox {
+        padding: 1rem;
+    }
+
+    .lightbox__img {
+        max-height: 70vh;
+    }
+
+    .lightbox__caption {
+        margin-top: 1rem;
+    }
+
+    .lightbox__close {
+        top: 14px;
+        right: 14px;
+        font-size: 28px;
+    }
+
+    .lightbox__prev,
+    .lightbox__next {
+        font-size: 28px;
+        padding: 8px;
+    }
+
+    .lightbox__prev { left: 6px; }
+    .lightbox__next { right: 6px; }
 }

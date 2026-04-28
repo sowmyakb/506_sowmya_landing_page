@@ -12,6 +12,10 @@ desktop.ini
 *.swo
 *~
 
+# Cursor / editor session data
+.specstory/
+.cursor/
+
 # Keys — never commit these
 *.pem
 *.key
